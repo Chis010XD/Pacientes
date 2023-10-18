@@ -1,0 +1,31 @@
+<div class="container my-5">
+  <button type="button" class="btn btn-primary" [routerLink]="['/crud/form']">Añadir</button>
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Apellido</th>
+        <th scope="col">Direccion</th>
+        <th scope="col">Telefono</th>
+        <th scope="col">Eiminar</th>
+        <th scope="col">Editar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let listado of Lista">
+        <td>{{listado.id}}</td>
+        <td>{{listado.nombre}}</td>
+        <td>{{listado.apellidos}}</td>
+        <td>{{listado.direccion}}</td>
+        <td>{{listado.telefono}}</td>
+        <td>
+          <button type="button" class="btn btn-danger" (click)="eliminar(listado)">Eliminar</button>
+        </td>
+        <td>
+          <button type="button" class="btn btn-success" name ="button" [routerLink]="['/crud/form',listado.id]">Editar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
